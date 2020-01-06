@@ -1,9 +1,10 @@
 import org.junit.Test;
-
 import tp2.Guide6;
-import tp2.answers.Guide6Solved;
-import tp2.utils.*;
-import utils.*;
+import tp2.Guide6Solution;
+import tp2.utils.MatrixMatrixOperation;
+import tp2.utils.MatrixVectorOperation;
+import utils.Guide6Helpers;
+import utils.SkipRule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class Guide6Test extends SkipRule {
-    Guide6 guide6 = new Guide6Solved();
+    Guide6 guide6 = new Guide6Solution();
 
     @Test
     public void exercise_1_a() {

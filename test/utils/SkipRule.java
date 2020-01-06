@@ -3,7 +3,6 @@ package utils;
 import org.junit.Assume;
 import org.junit.Rule;
 import org.junit.rules.MethodRule;
-import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
 
 public class SkipRule {
