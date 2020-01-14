@@ -23,7 +23,8 @@ public class ExampleTest {
 
     @Test
     public void optimalMultiplication() {
-        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{0, 1, 1}, {1, 0, 1}, {1, 1, 0}}, new int[]{2, 3, 4});
+//        Notice that the 0 where replaced by 9 to show that they do not affect the multiplication
+        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{9, 1, 1}, {1, 9, 1}, {1, 1, 9}}, new int[]{2, 3, 4});
         assertArrayEquals(new int[]{7, 6, 5}, example.optimalMultiplication(op1).getResult());
         assertTrue(op1.getCounter() <= 12);
     }
