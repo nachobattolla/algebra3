@@ -27,16 +27,12 @@ public class Matrix {
         return matrix[0].length;
     }
 
-    public int[][] getMatrix() {
-        return matrix;
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Matrix)) {
             return false;
         }
 
-        return Arrays.equals(matrix, ((Matrix) obj).getMatrix());
+        return Arrays.equals(matrix, ((Matrix) obj).matrix);
     }
 }

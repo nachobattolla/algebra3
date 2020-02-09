@@ -17,7 +17,7 @@ public class ExampleTest {
         int[][] matrixValues = {{0, 1, 1}, {1, 0, 1}, {1, 1, 0}};
         int[] vectorValues = {2, 3, 4};
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(matrixValues), new Vector(vectorValues));
-        assertArrayEquals(new int[]{7, 6, 5}, example.nonOptimalMultiplication(op1).getResult().getVector());
+        assertEquals(new Vector(new int[]{7, 6, 5}), example.nonOptimalMultiplication(op1).getResult());
         assertEquals(op1.getCounter(),18);
 
 //        12 is the exact number of accesses in an optimized multiplication
@@ -31,7 +31,7 @@ public class ExampleTest {
         int[][] matrixValues = {{9, 1, 1}, {1, 9, 1}, {1, 1, 9}};
         int[] vectorValues = {2, 3, 4};
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(matrixValues), new Vector(vectorValues));
-        assertArrayEquals(new int[]{7, 6, 5}, example.optimalMultiplication(op1).getResult().getVector());
+        assertEquals(new Vector(new int[]{7, 6, 5}), example.optimalMultiplication(op1).getResult());
         assertTrue(op1.getCounter() <= 12);
     }
 

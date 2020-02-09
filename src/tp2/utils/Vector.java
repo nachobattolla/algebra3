@@ -23,16 +23,12 @@ public class Vector {
         return vector.length;
     }
 
-    public int[] getVector() {
-        return vector;
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Vector)) {
             return false;
         }
 
-        return Arrays.equals(vector, ((Vector) obj).getVector());
+        return Arrays.equals(vector, ((Vector) obj).vector);
     }
 }
