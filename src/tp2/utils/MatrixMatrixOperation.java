@@ -1,51 +1,48 @@
 package tp2.utils;
 
 public class MatrixMatrixOperation {
-    private final int[][] matrix1;
-    private final int[][] matrix2;
-    private int[][] result;
-    private int counter;
+    private final Matrix matrix1;
+    private final Matrix matrix2;
+    private Matrix result;
 
-    public MatrixMatrixOperation(int[][] matrix1, int[][] matrix2) {
+    public MatrixMatrixOperation(Matrix matrix1, Matrix matrix2) {
         this.matrix1 = matrix1;
         this.matrix2 = matrix2;
     }
 
-    public int getMatrix1Value(int i, int j) {
-        counter += 1;
-        return matrix1[i][j];
-    }
-
-    public int getMatrix2Value(int i, int j) {
-        counter += 1;
-        return matrix2[i][j];
-    }
-
-    public int[][] getResult() {
+    public Matrix getResult() {
         return result;
     }
 
-    public void setResult(int[][] result) {
+    public void setResult(Matrix result) {
         this.result = result;
     }
 
     public int getCounter() {
-        return counter;
+        return matrix1.getCounter() + matrix2.getCounter();
     }
 
-    public int getMatrix1Rows() {
-        return matrix1.length;
+    public int getCounter(int operandNumber) {
+        switch (operandNumber) {
+            case 1:
+                return matrix1.getCounter();
+            case 2:
+                return matrix2.getCounter();
+            default:
+                return 0;
+        }
     }
 
-    public int getMatrix1Columns() {
-        return matrix1[0].length;
+    public int multiplyPositions(int i1, int j1, int i2, int j2) {
+        return matrix1.getValue(i1, j1) * matrix2.getValue(i2, j2);
     }
 
-    public int getMatrix2Rows() {
-        return matrix2.length;
+    public Matrix getMatrix1() {
+        return matrix1;
     }
 
-    public int getMatrix2Columns() {
-        return matrix2.length;
+    public Matrix getMatrix2() {
+        return matrix2;
     }
+
 }
