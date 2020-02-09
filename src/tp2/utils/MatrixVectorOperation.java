@@ -1,48 +1,56 @@
 package tp2.utils;
 
 public class MatrixVectorOperation {
-    private final int[][] matrix;
-    private final int[] vector;
-    private int[] result;
-    private int counter;
+    private final Matrix matrix;
+    private final Vector vector;
+    private Vector result;
 
-    public MatrixVectorOperation(int[][] matrix1, int[]vector) {
-        this.matrix = matrix1;
+    public MatrixVectorOperation(Matrix matrix, Vector vector) {
+        this.matrix = matrix;
         this.vector = vector;
     }
 
-    public int getMatrixValue(int i, int j) {
-        counter+=1;
-        return matrix[i][j];
-    }
-
-    public int getVectorValue(int i) {
-        counter+=1;
-        return vector[i];
-    }
-
-    public int[] getResult() {
+    public Vector getResult() {
         return result;
     }
 
-    public void setResult(int[] result) {
+    public void setResult(Vector result) {
         this.result = result;
     }
 
     public int getCounter() {
-        return counter;
+        return matrix.getCounter() + vector.getCounter();
+    }
+
+    public int getCounter(int operandNumber) {
+        switch (operandNumber) {
+            case 1:
+                return matrix.getCounter();
+            case 2:
+                return vector.getCounter();
+            default:
+                return 0;
+        }
+    }
+
+    public int multiplyPositions(int i1, int j1, int i2) {
+        return matrix.getValue(i1, j1) * vector.getValue(i2);
     }
 
     public int getMatrixRows() {
-        return matrix.length;
+        return matrix.getRows();
     }
 
     public int getMatrixColumns() {
-        return matrix[0].length;
+        return matrix.getColumns();
     }
 
-    public int getVectorSize() {
-        return vector.length;
+    public Matrix getMatrix() {
+        return matrix;
+    }
+
+    public Vector getVector() {
+        return vector;
     }
 
 }

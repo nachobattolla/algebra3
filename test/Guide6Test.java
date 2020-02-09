@@ -1,8 +1,10 @@
 import org.junit.Test;
 import tp2.Guide6;
 import tp2.Guide6Solution;
+import tp2.utils.Matrix;
 import tp2.utils.MatrixMatrixOperation;
 import tp2.utils.MatrixVectorOperation;
+import tp2.utils.Vector;
 import utils.Guide6Helpers;
 import utils.SkipRule;
 
@@ -88,144 +90,144 @@ public class Guide6Test extends SkipRule {
 
     @Test
     public void exercise_3_a_i() {
-        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}, new int[]{7, 8, 9});
-        assertArrayEquals(new int[]{24, 17, 9}, guide6.exercise_3_a_i(op1).getResult());
+        MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}), new Vector(new int[]{7, 8, 9}));
+        assertArrayEquals(new int[]{24, 17, 9}, guide6.exercise_3_a_i(op1).getResult().getVector());
         assertTrue(op1.getCounter() <= 12);
 
-        MatrixVectorOperation op2 = new MatrixVectorOperation(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}, new int[]{1, 2, 3, 4});
-        assertArrayEquals(new int[]{10, 9, 7, 4}, guide6.exercise_3_a_i(op2).getResult());
+        MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Vector(new int[]{1, 2, 3, 4}));
+        assertArrayEquals(new int[]{10, 9, 7, 4}, guide6.exercise_3_a_i(op2).getResult().getVector());
         assertTrue(op2.getCounter() <= 20);
     }
 
     @Test
     public void exercise_3_a_ii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}}, new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}});
-        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 10, 12}, {0, 0, 18}}, guide6.exercise_3_a_ii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}}), new Matrix(new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}}));
+        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 10, 12}, {0, 0, 18}}, guide6.exercise_3_a_ii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 12);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}, new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3,}, {0, 0, 0, 3}}, guide6.exercise_3_a_ii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3,}, {0, 0, 0, 3}}, guide6.exercise_3_a_ii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 20);
     }
 
     @Test
     public void exercise_3_a_iii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1},}, new int[][]{{2, 2, 2}, {9, 2, 2}, {9, 9, 2}});
-        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 2, 4}, {0, 0, 2}}, guide6.exercise_3_a_iii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2}, {9, 2, 2}, {9, 9, 2}}));
+        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 2, 4}, {0, 0, 2}}, guide6.exercise_3_a_iii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 20);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}, new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}});
-        assertArrayEquals(new int[][]{{2, 4, 6, 8}, {0, 2, 4, 6}, {0, 0, 2, 4}, {0, 0, 0, 2}}, guide6.exercise_3_a_iii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}}));
+        assertArrayEquals(new int[][]{{2, 4, 6, 8}, {0, 2, 4, 6}, {0, 0, 2, 4}, {0, 0, 0, 2}}, guide6.exercise_3_a_iii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 40);
     }
 
     @Test
     public void exercise_3_b_i() {
-        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}, new int[]{2, 3, 4});
-        assertArrayEquals(new int[]{5, 9, 9}, guide6.exercise_3_b_i(op1).getResult());
+        MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Vector(new int[]{2, 3, 4}));
+        assertArrayEquals(new int[]{5, 9, 9}, guide6.exercise_3_b_i(op1).getResult().getVector());
         assertTrue(op1.getCounter() <= 16);
 
-        MatrixVectorOperation op2 = new MatrixVectorOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}, new int[]{1, 2, 3, 4});
-        assertArrayEquals(new int[]{3, 6, 10, 10}, guide6.exercise_3_b_i(op2).getResult());
+        MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
+        assertArrayEquals(new int[]{3, 6, 10, 10}, guide6.exercise_3_b_i(op2).getResult().getVector());
         assertTrue(op2.getCounter() <= 26);
     }
 
     @Test
     public void exercise_3_b_ii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}, new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 0}, {3, 3, 3}, {3, 3, 3}}, guide6.exercise_3_b_ii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 0}, {3, 3, 3}, {3, 3, 3}}, guide6.exercise_3_b_ii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 16);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}, new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {3, 3, 3, 3,}, {3, 3, 3, 3}}, guide6.exercise_3_b_ii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {3, 3, 3, 3,}, {3, 3, 3, 3}}, guide6.exercise_3_b_ii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 26);
     }
 
     @Test
     public void exercise_3_b_iii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}, new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 4, 2}, {6, 6, 4}, {6, 6, 4}}, guide6.exercise_3_b_iii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 4, 2}, {6, 6, 4}, {6, 6, 4}}, guide6.exercise_3_b_iii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 42);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}, new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 4, 2, 0}, {6, 6, 4, 2}, {8, 8, 6, 4}, {8, 8, 6, 4}}, guide6.exercise_3_b_iii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 4, 2, 0}, {6, 6, 4, 2}, {8, 8, 6, 4}, {8, 8, 6, 4}}, guide6.exercise_3_b_iii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 80);
     }
 
     @Test
     public void exercise_3_c_i() {
-        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}, new int[]{2, 3, 4});
-        assertArrayEquals(new int[]{5, 9, 7}, guide6.exercise_3_c_i(op1).getResult());
+        MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Vector(new int[]{2, 3, 4}));
+        assertArrayEquals(new int[]{5, 9, 7}, guide6.exercise_3_c_i(op1).getResult().getVector());
         assertTrue(op1.getCounter() <= 14);
 
-        MatrixVectorOperation op2 = new MatrixVectorOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}, new int[]{1, 2, 3, 4});
-        assertArrayEquals(new int[]{3, 6, 9, 7}, guide6.exercise_3_c_i(op2).getResult());
+        MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
+        assertArrayEquals(new int[]{3, 6, 9, 7}, guide6.exercise_3_c_i(op2).getResult().getVector());
         assertTrue(op2.getCounter() <= 20);
     }
 
     @Test
     public void exercise_3_c_ii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}, new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 0}, {3, 3, 3}, {0, 3, 3}}, guide6.exercise_3_c_ii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 0}, {3, 3, 3}, {0, 3, 3}}, guide6.exercise_3_c_ii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 16);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}, new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {0, 3, 3, 3,}, {0, 0, 3, 3}}, guide6.exercise_3_c_ii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {0, 3, 3, 3,}, {0, 0, 3, 3}}, guide6.exercise_3_c_ii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 26);
     }
 
     @Test
     public void exercise_3_c_iii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}, new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 4, 2}, {4, 6, 4}, {2, 4, 4}}, guide6.exercise_3_c_iii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 4, 2}, {4, 6, 4}, {2, 4, 4}}, guide6.exercise_3_c_iii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 34);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}, new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 4, 2, 0}, {4, 6, 4, 2}, {2, 4, 6, 4}, {0, 2, 4, 4}}, guide6.exercise_3_c_iii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 4, 2, 0}, {4, 6, 4, 2}, {2, 4, 6, 4}, {0, 2, 4, 4}}, guide6.exercise_3_c_iii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 52);
     }
 
     @Test
     public void exercise_3_d_i() {
-        MatrixVectorOperation op1 = new MatrixVectorOperation(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}, new int[]{2, 3, 4});
-        assertArrayEquals(new int[]{9, 9, 7}, guide6.exercise_3_d_i(op1).getResult());
+        MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Vector(new int[]{2, 3, 4}));
+        assertArrayEquals(new int[]{9, 9, 7}, guide6.exercise_3_d_i(op1).getResult().getVector());
         assertTrue(op1.getCounter() <= 16);
 
-        MatrixVectorOperation op2 = new MatrixVectorOperation(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 1, 1, 1}}, new int[]{1, 2, 3, 4});
-        assertArrayEquals(new int[]{10, 10, 9, 7}, guide6.exercise_3_d_i(op2).getResult());
+        MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 1, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
+        assertArrayEquals(new int[]{10, 10, 9, 7}, guide6.exercise_3_d_i(op2).getResult().getVector());
         assertTrue(op2.getCounter() <= 26);
     }
 
     @Test
     public void exercise_3_d_ii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}, new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 3}, {3, 3, 3}, {0, 3, 3}}, guide6.exercise_3_d_ii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 3}, {3, 3, 3}, {0, 3, 3}}, guide6.exercise_3_d_ii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 16);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}, new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}});
-        assertArrayEquals(new int[][]{{3, 3, 3, 3}, {3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3}}, guide6.exercise_3_d_ii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
+        assertArrayEquals(new int[][]{{3, 3, 3, 3}, {3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3}}, guide6.exercise_3_d_ii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 26);
     }
 
     @Test
     public void exercise_3_d_iii() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}, new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 6, 6}, {4, 6, 6}, {2, 4, 4}}, guide6.exercise_3_d_iii(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 6, 6}, {4, 6, 6}, {2, 4, 4}}, guide6.exercise_3_d_iii(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 42);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}, new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}});
-        assertArrayEquals(new int[][]{{4, 6, 8, 8}, {4, 6, 8, 8}, {2, 4, 6, 6}, {0, 2, 4, 4}}, guide6.exercise_3_d_iii(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
+        assertArrayEquals(new int[][]{{4, 6, 8, 8}, {4, 6, 8, 8}, {2, 4, 6, 6}, {0, 2, 4, 4}}, guide6.exercise_3_d_iii(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 80);
     }
 
     @Test
     public void exercise_3_e() {
-        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new int[][]{{1, 9, 9}, {1, 1, 9}, {1, 1, 1},}, new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}});
-        assertArrayEquals(new int[][]{{1, 1, 1}, {1, 2, 2}, {1, 2, 3}}, guide6.exercise_3_e(op1).getResult());
+        MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 9, 9}, {1, 1, 9}, {1, 1, 1}}), new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}));
+        assertArrayEquals(new int[][]{{1, 1, 1}, {1, 2, 2}, {1, 2, 3}}, guide6.exercise_3_e(op1).getResult().getMatrix());
         assertTrue(op1.getCounter() <= 28);
 
-        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new int[][]{{1, 9, 9, 9}, {1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}}, new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}});
-        assertArrayEquals(new int[][]{{1, 1, 1, 1}, {1, 2, 2, 2}, {1, 2, 3, 3}, {1, 2, 3, 4}}, guide6.exercise_3_e(op2).getResult());
+        MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 9, 9, 9}, {1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}}), new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}));
+        assertArrayEquals(new int[][]{{1, 1, 1, 1}, {1, 2, 2, 2}, {1, 2, 3, 3}, {1, 2, 3, 4}}, guide6.exercise_3_e(op2).getResult().getMatrix());
         assertTrue(op2.getCounter() <= 60);
     }
 

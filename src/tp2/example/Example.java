@@ -1,6 +1,7 @@
 package tp2.example;
 
 import tp2.utils.MatrixVectorOperation;
+import tp2.utils.Vector;
 
 public class Example {
     /*
@@ -15,11 +16,11 @@ public class Example {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                result[i] += op.getMatrixValue(i, j) * op.getVectorValue(j);
+                result[i] += op.multiplyPositions(i, j, j);
             }
         }
 //        It is very important to set the result before returning it
-        op.setResult(result);
+        op.setResult(new Vector(result));
         return op;
     }
 
@@ -32,11 +33,11 @@ public class Example {
             for (int j = 0; j < columns; j++) {
 //                If i == j the matrix has a zero, so we skip it, thus making less calculations
                 if (i != j)
-                    result[i] += op.getMatrixValue(i, j) * op.getVectorValue(j);
+                    result[i] += op.multiplyPositions(i, j, j);
             }
         }
 //        Seriously, you should set it before returning it
-        op.setResult(result);
+        op.setResult(new Vector(result));
         return op;
     }
 }
