@@ -1,6 +1,7 @@
 import org.junit.Test;
 import tp2.TpVectors;
 import tp2.TpVectorsSolution;
+import tp2.utils.Infraction;
 import utils.SkipRule;
 
 import static org.junit.Assert.*;
@@ -87,5 +88,23 @@ public class TpVectorsTest extends SkipRule {
 //    TODO: test exercise 4
     @Test
     public void exercise_4() {
+    }
+
+    @Test
+    public void exercise_5_a() {
+        assertArrayEquals(new int[]{1}, vectorGuide.exercise_5_a(new Infraction[]{new Infraction(1,2,3),new Infraction(1,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
+        assertArrayEquals(new int[]{12,1}, vectorGuide.exercise_5_a(new Infraction[]{new Infraction(12,2,3),new Infraction(12,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
+    }
+
+    @Test
+    public void exercise_5_b() {
+        assertArrayEquals(new int[]{2,5,6,7,8,9,10,11,12}, vectorGuide.exercise_5_b(new Infraction[]{new Infraction(1,2,3),new Infraction(3,3,1),new Infraction(4,5,2),new Infraction(1,6,3)}));
+        assertArrayEquals(new int[]{2,4,5,6,7,8,9,11}, vectorGuide.exercise_5_b(new Infraction[]{new Infraction(12,2,3),new Infraction(10,3,1),new Infraction(1,5,2),new Infraction(3,6,3)}));
+    }
+
+    @Test
+    public void exercise_5_c() {
+        assertEquals(9, vectorGuide.exercise_5_c(new Infraction[]{new Infraction(1,2,3),new Infraction(1,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
+        assertEquals(16, vectorGuide.exercise_5_c(new Infraction[]{new Infraction(12,2,10),new Infraction(12,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
     }
 }

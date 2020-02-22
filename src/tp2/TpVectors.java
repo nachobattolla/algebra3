@@ -1,5 +1,8 @@
 package tp2;
 
+import org.omg.PortableInterceptor.INACTIVE;
+import tp2.utils.Infraction;
+
 public interface TpVectors {
     int exercise_1_a(int[] a);
 
@@ -28,4 +31,10 @@ public interface TpVectors {
     boolean exercise_3(int[] a);
 
     boolean exercise_4(int[] a);
+
+    int[] exercise_5_a(Infraction[] a);
+
+    int[] exercise_5_b(Infraction[] a);
+
+    int exercise_5_c(Infraction[] a);
 }

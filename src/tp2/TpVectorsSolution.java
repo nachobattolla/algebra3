@@ -1,5 +1,7 @@
 package tp2;
 
+import tp2.utils.Infraction;
+
 public class TpVectorsSolution implements TpVectors {
 
     @Override
@@ -64,6 +66,21 @@ public class TpVectorsSolution implements TpVectors {
 
     @Override
     public boolean exercise_4(int[] a) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public int[] exercise_5_a(Infraction[] a) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public int[] exercise_5_b(Infraction[] a) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public int exercise_5_c(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 }
