@@ -1,4 +1,4 @@
-package tp2.utils;
+package tp3.utils;
 
 public class MatrixMatrixOperation {
     private final Matrix matrix1;

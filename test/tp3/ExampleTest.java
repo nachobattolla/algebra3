@@ -1,10 +1,10 @@
-package tp2;
+package tp3;
 
 import org.junit.Test;
-import tp2.example.Example;
-import tp2.utils.Matrix;
-import tp2.utils.MatrixVectorOperation;
-import tp2.utils.Vector;
+import tp3.example.Example;
+import tp3.utils.Matrix;
+import tp3.utils.MatrixVectorOperation;
+import tp3.utils.Vector;
 
 import static org.junit.Assert.*;
 

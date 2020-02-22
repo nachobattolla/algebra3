@@ -1,7 +1,7 @@
-package tp2.example;
+package tp3.example;
 
-import tp2.utils.MatrixVectorOperation;
-import tp2.utils.Vector;
+import tp3.utils.MatrixVectorOperation;
+import tp3.utils.Vector;
 
 public class Example {
     /*

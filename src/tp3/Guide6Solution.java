@@ -1,7 +1,7 @@
-package tp2;
+package tp3;
 
-import tp2.utils.MatrixMatrixOperation;
-import tp2.utils.MatrixVectorOperation;
+import tp3.utils.MatrixMatrixOperation;
+import tp3.utils.MatrixVectorOperation;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 import org.junit.Test;
-import tp3.Guide7;
-import tp3.Guide7Solution;
+import tp4.Guide7;
+import tp4.Guide7Solution;
 import utils.Guide7Helpers;
 import utils.SkipRule;
 

@@ -1,10 +1,10 @@
 import org.junit.Test;
-import tp2.Guide6;
-import tp2.Guide6Solution;
-import tp2.utils.Matrix;
-import tp2.utils.MatrixMatrixOperation;
-import tp2.utils.MatrixVectorOperation;
-import tp2.utils.Vector;
+import tp3.Guide6;
+import tp3.Guide6Solution;
+import tp3.utils.Matrix;
+import tp3.utils.MatrixMatrixOperation;
+import tp3.utils.MatrixVectorOperation;
+import tp3.utils.Vector;
 import utils.Guide6Helpers;
 import utils.SkipRule;
 
