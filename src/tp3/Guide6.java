@@ -7,21 +7,19 @@ import java.util.List;
 
 public interface Guide6 {
     // Exercise 1
-    int exercise_1_a(int[] v, int[] w);
+    int exercise_1_a(int[][] A);
 
     int exercise_1_b(int[][] A);
 
-    int exercise_1_c(int[][] A);
+    int[] exercise_1_c(int[][] A);
 
-    int[] exercise_1_d(int[][] A);
+    int[] exercise_1_d(int[][] A, int[] b);
 
-    int[] exercise_1_e(int[][] A, int[] b);
+    int[][] exercise_1_e(int[][] A, int[][] B);
 
     int[][] exercise_1_f(int[][] A, int[][] B);
 
-    int[][] exercise_1_g(int[][] A, int[][] B);
-
-    int[][] exercise_1_h(int[][] A);
+    int[][] exercise_1_g(int[][] A);
 
     // Exercise 2
     boolean exercise_2_a(int[][] A);

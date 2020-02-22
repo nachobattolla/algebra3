@@ -6,8 +6,9 @@ import tp3.utils.MatrixVectorOperation;
 import java.util.List;
 
 public class Guide6Solution implements Guide6 {
+
     @Override
-    public int exercise_1_a(int[] v, int[] w) {
+    public int exercise_1_a(int[][] A) {
         throw new UnsupportedOperationException("TODO");
     }
 
@@ -17,17 +18,17 @@ public class Guide6Solution implements Guide6 {
     }
 
     @Override
-    public int exercise_1_c(int[][] A) {
+    public int[] exercise_1_c(int[][] A) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_d(int[][] A) {
+    public int[] exercise_1_d(int[][] A, int[] b) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_e(int[][] A, int[] b) {
+    public int[][] exercise_1_e(int[][] A, int[][] B) {
         throw new UnsupportedOperationException("TODO");
     }
 
@@ -37,12 +38,7 @@ public class Guide6Solution implements Guide6 {
     }
 
     @Override
-    public int[][] exercise_1_g(int[][] A, int[][] B) {
-        throw new UnsupportedOperationException("TODO");
-    }
-
-    @Override
-    public int[][] exercise_1_h(int[][] A) {
+    public int[][] exercise_1_g(int[][] A) {
         throw new UnsupportedOperationException("TODO");
     }
 

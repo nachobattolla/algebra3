@@ -19,60 +19,53 @@ public class Guide6Test extends SkipRule {
 
     @Test
     public void exercise_1_a() {
-        assertEquals(14, guide6.exercise_1_a(new int[]{1, 2, 3}, new int[]{1, 2, 3}));
-        assertEquals(0, guide6.exercise_1_a(new int[]{1, 0, 0}, new int[]{0, 1, 0}));
-        assertEquals(56, guide6.exercise_1_a(new int[]{2, 3, 4}, new int[]{5, 6, 7}));
+        assertEquals(7, guide6.exercise_1_a(new int[][]{{2, 3}, {4, 5}}));
+        assertEquals(3, guide6.exercise_1_a(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
+        assertEquals(34, guide6.exercise_1_a(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
     }
 
     @Test
     public void exercise_1_b() {
-        assertEquals(7, guide6.exercise_1_b(new int[][]{{2, 3}, {4, 5}}));
-        assertEquals(3, guide6.exercise_1_b(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        assertEquals(34, guide6.exercise_1_b(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
+        assertEquals(4, guide6.exercise_1_b(new int[][]{{2, 3}, {4, 5}}));
+        assertEquals(1, guide6.exercise_1_b(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
+        assertEquals(30, guide6.exercise_1_b(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
     }
 
     @Test
     public void exercise_1_c() {
-        assertEquals(4, guide6.exercise_1_c(new int[][]{{2, 3}, {4, 5}}));
-        assertEquals(1, guide6.exercise_1_c(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        assertEquals(30, guide6.exercise_1_c(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
+        assertArrayEquals(new int[]{1, 1, 1, 6}, guide6.exercise_1_c(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
+        assertArrayEquals(new int[]{6, 6}, guide6.exercise_1_c(new int[][]{{1, 1, 1, 1, 1, 1}, {2, 2, 2}}));
+        assertArrayEquals(new int[]{7, 14, 11, 6, 6}, guide6.exercise_1_c(new int[][]{{1, 2, 4}, {2, 8, 4}, {6, 2, 3}, {1, 2, 3}, {1, 2, 3}}));
     }
 
     @Test
     public void exercise_1_d() {
-        assertArrayEquals(new int[]{1, 1, 1, 6}, guide6.exercise_1_d(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
-        assertArrayEquals(new int[]{6, 6}, guide6.exercise_1_d(new int[][]{{1, 1, 1, 1, 1, 1}, {2, 2, 2}}));
-        assertArrayEquals(new int[]{7, 14, 11, 6, 6}, guide6.exercise_1_d(new int[][]{{1, 2, 4}, {2, 8, 4}, {6, 2, 3}, {1, 2, 3}, {1, 2, 3}}));
+        assertArrayEquals(new int[]{8, 14}, guide6.exercise_1_d(new int[][]{{2, 3}, {4, 5}}, new int[]{1, 2}));
+        assertArrayEquals(new int[]{7, 8, 9}, guide6.exercise_1_d(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[]{7, 8, 9}));
+        assertArrayEquals(new int[]{9, 9, 9}, guide6.exercise_1_d(new int[][]{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, new int[]{2, 3, 4}));
     }
 
     @Test
     public void exercise_1_e() {
-        assertArrayEquals(new int[]{8, 14}, guide6.exercise_1_e(new int[][]{{2, 3}, {4, 5}}, new int[]{1, 2}));
-        assertArrayEquals(new int[]{7, 8, 9}, guide6.exercise_1_e(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[]{7, 8, 9}));
-        assertArrayEquals(new int[]{9, 9, 9}, guide6.exercise_1_e(new int[][]{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, new int[]{2, 3, 4}));
+        assertArrayEquals(new int[][]{{2, 4, 6}, {8, 10, 12}, {14, 16, 18}}, guide6.exercise_1_e(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertArrayEquals(new int[][]{{2, 2, 3}, {4, 6, 6}, {7, 8, 10}}, guide6.exercise_1_e(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertArrayEquals(new int[][]{{2, 0, 0}, {0, 2, 0}, {0, 0, 2}}, guide6.exercise_1_e(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
     }
 
     @Test
     public void exercise_1_f() {
-        assertArrayEquals(new int[][]{{2, 4, 6}, {8, 10, 12}, {14, 16, 18}}, guide6.exercise_1_f(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
-        assertArrayEquals(new int[][]{{2, 2, 3}, {4, 6, 6}, {7, 8, 10}}, guide6.exercise_1_f(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
-        assertArrayEquals(new int[][]{{2, 0, 0}, {0, 2, 0}, {0, 0, 2}}, guide6.exercise_1_f(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
+        assertArrayEquals(new int[][]{{30, 36, 42}, {66, 81, 96}, {102, 126, 150}}, guide6.exercise_1_f(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertArrayEquals(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, guide6.exercise_1_f(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertArrayEquals(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, guide6.exercise_1_f(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
+        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 2, 4}, {0, 0, 2}}, guide6.exercise_1_f(new int[][]{{1, 1, 1}, {0, 1, 1}, {0, 0, 1}}, new int[][]{{2, 2, 2}, {0, 2, 2}, {0, 0, 2}}));
+        assertArrayEquals(new int[][]{{6, 6, 6}, {12, 12, 12}, {18, 18, 18}}, guide6.exercise_1_f(new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}}, new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}}));
     }
 
     @Test
     public void exercise_1_g() {
-        assertArrayEquals(new int[][]{{30, 36, 42}, {66, 81, 96}, {102, 126, 150}}, guide6.exercise_1_g(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
-        assertArrayEquals(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, guide6.exercise_1_g(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
-        assertArrayEquals(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, guide6.exercise_1_g(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        assertArrayEquals(new int[][]{{2, 4, 6}, {0, 2, 4}, {0, 0, 2}}, guide6.exercise_1_g(new int[][]{{1, 1, 1}, {0, 1, 1}, {0, 0, 1}}, new int[][]{{2, 2, 2}, {0, 2, 2}, {0, 0, 2}}));
-        assertArrayEquals(new int[][]{{6, 6, 6}, {12, 12, 12}, {18, 18, 18}}, guide6.exercise_1_g(new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}}, new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}}));
-    }
-
-    @Test
-    public void exercise_1_h() {
-        assertArrayEquals(new int[][]{{1, 3}, {2, 4},}, guide6.exercise_1_h(new int[][]{{1, 2}, {3, 4}}));
-        assertArrayEquals(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, guide6.exercise_1_h(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        assertArrayEquals(new int[][]{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}, guide6.exercise_1_h(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertArrayEquals(new int[][]{{1, 3}, {2, 4},}, guide6.exercise_1_g(new int[][]{{1, 2}, {3, 4}}));
+        assertArrayEquals(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, guide6.exercise_1_g(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
+        assertArrayEquals(new int[][]{{1, 4, 7}, {2, 5, 8}, {3, 6, 9}}, guide6.exercise_1_g(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
     }
 
     @Test
