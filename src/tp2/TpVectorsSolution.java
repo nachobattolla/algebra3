@@ -2,85 +2,85 @@ package tp2;
 
 import tp2.utils.Infraction;
 
-public class TpVectorsSolution implements TpVectors {
+public class TpVectorsSolution<T> implements TpVectors<T> {
 
     @Override
-    public int exercise_1_a(int[] a) {
+    public T exercise_1_a(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_1_b(int[] a) {
+    public T exercise_1_b(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_1_c(int[] a, int value) {
+    public T exercise_1_c(T[] a, T value) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_1_d(int[] a) {
+    public T exercise_1_d(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_1_f(int[] a) {
+    public T exercise_1_f(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_g(int[] v, int[] w) {
+    public T[] exercise_1_g(T[] v, T[] w) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_h(int[] v, int[] w) {
+    public T[] exercise_1_h(T[] v, T[] w) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_i(int[] v, int[] w) {
+    public T[] exercise_1_i(T[] v, T[] w) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_1_j(int[] a) {
+    public T[] exercise_1_j(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_1_k(int[] v, int[] w) {
+    public T exercise_1_k(T[] v, T[] w) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_2(int[] a) {
+    public T[] exercise_2(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public boolean exercise_3(int[] a) {
+    public boolean exercise_3(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public boolean exercise_4(int[] a) {
+    public boolean exercise_4(T[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_5_a(Infraction[] a) {
+    public T[] exercise_5_a(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_5_b(Infraction[] a) {
+    public T[] exercise_5_b(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_5_c(Infraction[] a) {
+    public T exercise_5_c(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 }
