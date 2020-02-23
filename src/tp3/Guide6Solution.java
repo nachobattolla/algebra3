@@ -121,4 +121,13 @@ public class Guide6Solution implements Guide6 {
     public List<double[]> exercise_4(List<double[]> A) {
         throw new UnsupportedOperationException("TODO");
     }
+
+    @Override
+    public int exercise_5_a(int[][] A) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
+    public int exercise_5_b(int[][] A) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
+    public int[][] exercise_5_c(int[][] A, int c) { throw new UnsupportedOperationException("TODO"); }
 }

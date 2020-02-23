@@ -11,7 +11,7 @@ public interface TpVectors {
 
     int exercise_1_d(int[] a);
 
-//    TODO: add exercise 1_e
+    int[] exercise_1_e(int[] a);
 
     int exercise_1_f(int[] a);
 
@@ -36,4 +36,6 @@ public interface TpVectors {
     int[] exercise_5_b(Infraction[] a);
 
     int exercise_5_c(Infraction[] a);
+
+    int[] exercise_6(int[] a);
 }

@@ -35,6 +35,13 @@ public class TpVectorsTest extends SkipRule {
     }
 
     @Test
+    public void exercise_1_e() {
+        assertArrayEquals(new int[]{1, 2, 6, 12, 25}, vectorGuide.exercise_1_e(new int[]{1, 1, 2, 3, 5}));
+        assertArrayEquals(new int[]{1, -2, 15, 28, 10, 42, 35, -16, 27, -30, 55, 60}, vectorGuide.exercise_1_e(new int[]{1, -1, 5, 7, 2, 7, 5, -2, 3, -3, 5, 5}));
+        assertArrayEquals(new int[]{1, -2, 15, 8, 0, -12, 21, -24, 45, 50}, vectorGuide.exercise_1_e(new int[]{1, -1, 5, 2, 0, -2, 3, -3, 5, 5}));
+    }
+
+    @Test
     public void exercise_1_f() {
         assertEquals(0, vectorGuide.exercise_1_f(new int[]{1, 1, 1, 1, 1, 1}));
         assertEquals(1, vectorGuide.exercise_1_f(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}));
@@ -85,9 +92,12 @@ public class TpVectorsTest extends SkipRule {
         assertFalse(vectorGuide.exercise_3(new int[]{1, 1, 2, 3, 5, 6}));
     }
 
-//    TODO: test exercise 4
     @Test
     public void exercise_4() {
+        assertTrue(vectorGuide.exercise_4(new int[]{3, -1, 3, -5}));
+        assertFalse(vectorGuide.exercise_4(new int[]{-3, 11, -3, -5}));
+        assertTrue(vectorGuide.exercise_4(new int[]{0, 5, -3, -2}));
+        assertFalse(vectorGuide.exercise_4(new int[]{0, 5, -3, -2, 1}));
     }
 
     @Test
@@ -106,5 +116,12 @@ public class TpVectorsTest extends SkipRule {
     public void exercise_5_c() {
         assertEquals(9, vectorGuide.exercise_5_c(new Infraction[]{new Infraction(1,2,3),new Infraction(1,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
         assertEquals(16, vectorGuide.exercise_5_c(new Infraction[]{new Infraction(12,2,10),new Infraction(12,3,1),new Infraction(1,5,2),new Infraction(1,6,3)}));
+    }
+
+    @Test
+    public void exercise_6() {
+        assertArrayEquals(new int[]{1, 2, 4, 7, 12}, vectorGuide.exercise_6(new int[]{1, 1, 2, 3, 5}));
+        assertArrayEquals(new int[]{1, 0, 5, 12, 14, 21, 26, 24, 27, 24, 29, 34}, vectorGuide.exercise_6(new int[]{1, -1, 5, 7, 2, 7, 5, -2, 3, -3, 5, 5}));
+        assertArrayEquals(new int[]{-1, -2, 3, 1, 1, -1, 2, -1, 4, -1}, vectorGuide.exercise_6(new int[]{-1, -1, 5, -2, 0, -2, 3, -3, 5, -5}));
     }
 }

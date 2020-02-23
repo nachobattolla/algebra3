@@ -55,4 +55,10 @@ public interface Guide6 {
 
     // Exercise 4
     List<double[]> exercise_4(List<double[]> A);
+
+    int exercise_5_a(int[][] A);
+
+    int exercise_5_b(int[][] A);
+
+    int[][] exercise_5_c(int[][] A, int c);
 }

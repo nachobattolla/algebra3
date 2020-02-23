@@ -25,6 +25,9 @@ public class TpVectorsSolution implements TpVectors {
     }
 
     @Override
+    public int[] exercise_1_e(int[] a) { throw new UnsupportedOperationException("TODO"); }
+
+    @Override
     public int exercise_1_f(int[] a) {
         throw new UnsupportedOperationException("TODO");
     }
@@ -81,6 +84,11 @@ public class TpVectorsSolution implements TpVectors {
 
     @Override
     public int exercise_5_c(Infraction[] a) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public int[] exercise_6(int[] a)  {
         throw new UnsupportedOperationException("TODO");
     }
 }
