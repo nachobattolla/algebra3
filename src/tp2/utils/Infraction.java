@@ -1,9 +1,9 @@
 package tp2.utils;
 
 public class Infraction {
-    final int monthNumber;
-    final int infractionCode;
-    final int numberOfInfractions;
+    public final int monthNumber;
+    public final int infractionCode;
+    public final int numberOfInfractions;
 
     public Infraction(int monthNumber, int infractionCode, int numberOfInfractions) {
         this.monthNumber = monthNumber;
