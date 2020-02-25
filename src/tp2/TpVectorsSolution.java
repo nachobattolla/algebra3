@@ -2,6 +2,8 @@ package tp2;
 
 import tp2.utils.Infraction;
 
+import java.util.List;
+
 public class TpVectorsSolution implements TpVectors {
 
     @Override
@@ -73,12 +75,12 @@ public class TpVectorsSolution implements TpVectors {
     }
 
     @Override
-    public int[] exercise_5_a(Infraction[] a) {
+    public List<Integer> exercise_5_a(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_5_b(Infraction[] a) {
+    public List<Integer> exercise_5_b(Infraction[] a) {
         throw new UnsupportedOperationException("TODO");
     }
 

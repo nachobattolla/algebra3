@@ -2,6 +2,8 @@ package tp2;
 
 import tp2.utils.Infraction;
 
+import java.util.List;
+
 public interface TpVectors {
     int exercise_1_a(int[] a);
 
@@ -31,9 +33,9 @@ public interface TpVectors {
 
     boolean exercise_4(int[] a);
 
-    int[] exercise_5_a(Infraction[] a);
+    List<Integer> exercise_5_a(Infraction[] a);
 
-    int[] exercise_5_b(Infraction[] a);
+    List<Integer> exercise_5_b(Infraction[] a);
 
     int exercise_5_c(Infraction[] a);
 
