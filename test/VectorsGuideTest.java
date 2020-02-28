@@ -1,15 +1,15 @@
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
-import tp2.TpVectors;
-import tp2.TpVectorsSolution;
+import tp2.VectorsGuide;
+import tp2.VectorsGuideSolution;
 import tp2.utils.Infraction;
 import tp2.utils.Survey;
 import utils.SkipRule;
 
 import static org.junit.Assert.*;
 
-public class TpVectorsTest extends SkipRule {
-    TpVectors vectorGuide = new TpVectorsSolution();
+public class VectorsGuideTest extends SkipRule {
+    VectorsGuide vectorGuide = new VectorsGuideSolution();
 
     @Test
     public void exercise_1_a() {

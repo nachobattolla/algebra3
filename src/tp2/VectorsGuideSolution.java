@@ -5,7 +5,7 @@ import tp2.utils.Survey;
 
 import java.util.List;
 
-public class TpVectorsSolution implements TpVectors {
+public class VectorsGuideSolution implements VectorsGuide {
 
     @Override
     public int exercise_1_a(int[] a) {
