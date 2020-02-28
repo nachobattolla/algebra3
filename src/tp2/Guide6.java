@@ -5,7 +5,7 @@ import tp2.utils.Survey;
 
 import java.util.List;
 
-public interface VectorsGuide {
+public interface Guide6 {
     int exercise_1_a(int[] a);
 
     int exercise_1_b(int[] a);

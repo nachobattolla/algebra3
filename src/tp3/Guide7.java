@@ -5,7 +5,7 @@ import tp3.utils.MatrixVectorOperation;
 
 import java.util.List;
 
-public interface Guide6 {
+public interface Guide7 {
     // Exercise 1
     int exercise_1_a(int[][] A);
 

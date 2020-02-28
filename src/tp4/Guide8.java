@@ -1,6 +1,6 @@
 package tp4;
 
-public interface Guide7
+public interface Guide8
 {
 	// Exercise 5
 	double[] exercise_5_a(double[][] A, double[] b);

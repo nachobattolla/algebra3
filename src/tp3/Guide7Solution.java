@@ -5,7 +5,7 @@ import tp3.utils.MatrixVectorOperation;
 
 import java.util.List;
 
-public class Guide6Solution implements Guide6 {
+public class Guide7Solution implements Guide7 {
 
     @Override
     public int exercise_1_a(int[][] A) {

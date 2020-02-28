@@ -1,6 +1,6 @@
 package tp4;
 
-public class Guide7Solution implements Guide7 {
+public class Guide8Solution implements Guide8 {
 
     // Exercise 5
     @Override
