@@ -85,6 +85,8 @@ public class Guide6Test extends SkipRule {
     @Test
     public void exercise_2() {
         assertArrayEquals(new int[]{1, 0, 3, 2}, guide6.exercise_2(new int[]{5, 7, 2, 4}));
+        assertArrayEquals(new int[]{0, 0, 0, 0}, guide6.exercise_2(new int[]{0, 0, 0, 0}));
+        assertArrayEquals(new int[]{3, 0, 2, 1, 4}, guide6.exercise_2(new int[]{2, 8, 4, 6, 1}));
     }
 
     @Test
