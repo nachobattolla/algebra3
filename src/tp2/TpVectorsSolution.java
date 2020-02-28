@@ -1,6 +1,7 @@
 package tp2;
 
 import tp2.utils.Infraction;
+import tp2.utils.Survey;
 
 import java.util.List;
 
@@ -27,7 +28,9 @@ public class TpVectorsSolution implements TpVectors {
     }
 
     @Override
-    public int[] exercise_1_e(int[] a) { throw new UnsupportedOperationException("TODO"); }
+    public int[] exercise_1_e(int[] a) {
+        throw new UnsupportedOperationException("TODO");
+    }
 
     @Override
     public int exercise_1_f(int[] a) {
@@ -80,17 +83,32 @@ public class TpVectorsSolution implements TpVectors {
     }
 
     @Override
-    public List<Integer> exercise_5_b(Infraction[] a) {
+    public List<Integer> exercise_5_b(Infraction[] infraction) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int exercise_5_c(Infraction[] a) {
+    public int exercise_5_c(Infraction[] infraction) {
         throw new UnsupportedOperationException("TODO");
     }
 
     @Override
-    public int[] exercise_6(int[] a)  {
+    public int[] exercise_6(int[] infraction) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public double exercise_7_a(Survey[] surveys) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public double exercise_7_b(Survey[] surveys) {
+        throw new UnsupportedOperationException("TODO");
+    }
+
+    @Override
+    public int exercise_7_c(Survey[] surveys) {
         throw new UnsupportedOperationException("TODO");
     }
 }

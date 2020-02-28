@@ -3,6 +3,7 @@ import org.junit.Test;
 import tp2.TpVectors;
 import tp2.TpVectorsSolution;
 import tp2.utils.Infraction;
+import tp2.utils.Survey;
 import utils.SkipRule;
 
 import static org.junit.Assert.*;
@@ -124,5 +125,26 @@ public class TpVectorsTest extends SkipRule {
         assertArrayEquals(new int[]{1, 2, 4, 7, 12}, vectorGuide.exercise_6(new int[]{1, 1, 2, 3, 5}));
         assertArrayEquals(new int[]{1, 0, 5, 12, 14, 21, 26, 24, 27, 24, 29, 34}, vectorGuide.exercise_6(new int[]{1, -1, 5, 7, 2, 7, 5, -2, 3, -3, 5, 5}));
         assertArrayEquals(new int[]{-1, -2, 3, 1, 1, -1, 2, -1, 4, -1}, vectorGuide.exercise_6(new int[]{-1, -1, 5, -2, 0, -2, 3, -3, 5, -5}));
+    }
+
+    @Test
+    public void exercise_7_a() {
+        assertEquals(0, vectorGuide.exercise_7_a(new Survey[]{new Survey(1, 24, 1), new Survey(1, 12, 1), new Survey(2, 22, 1), new Survey(1, 44, 1), new Survey(1, 8, 1), new Survey(1, 24, 1)}), 0.1);
+        assertEquals(1, vectorGuide.exercise_7_a(new Survey[]{new Survey(1, 24, 2), new Survey(2, 12, 1), new Survey(2, 22, 1), new Survey(1, 44, 2), new Survey(1, 8, 2), new Survey(1, 24, 2)}), 0.1);
+        assertEquals(0.25, vectorGuide.exercise_7_a(new Survey[]{new Survey(1, 24, 2), new Survey(2, 12, 1), new Survey(2, 22, 1), new Survey(1, 44, 1), new Survey(1, 8, 1), new Survey(1, 24, 1)}), 0.1);
+    }
+
+    @Test
+    public void exercise_7_b() {
+        assertEquals(22.33, vectorGuide.exercise_7_b(new Survey[]{new Survey(1, 24, 1), new Survey(1, 12, 1), new Survey(2, 22, 1), new Survey(1, 44, 1), new Survey(1, 8, 1), new Survey(1, 24, 1)}), 0.1);
+        assertEquals(25.16, vectorGuide.exercise_7_b(new Survey[]{new Survey(1, 13, 1), new Survey(2, 15, 1), new Survey(2, 44, 1), new Survey(1, 60, 1), new Survey(1, 8, 1), new Survey(1, 11, 1)}), 0.1);
+    }
+
+    @Test
+    public void exercise_7_c() {
+        assertEquals(0, vectorGuide.exercise_7_c(new Survey[]{new Survey(1, 24, 1), new Survey(1, 12, 1), new Survey(2, 2, 1), new Survey(1, 44, 1), new Survey(1, 8, 1), new Survey(1, 24, 1)}));
+        assertEquals(1, vectorGuide.exercise_7_c(new Survey[]{new Survey(2, 13, 2), new Survey(2, 15, 1), new Survey(2, 44, 1), new Survey(1, 60, 1), new Survey(2, 8, 1), new Survey(1, 11, 1)}));
+        assertEquals(3, vectorGuide.exercise_7_c(new Survey[]{new Survey(2, 33, 2), new Survey(2, 98, 1), new Survey(2, 44, 1), new Survey(1, 60, 1), new Survey(2, 8, 1), new Survey(1, 11, 1)}));
+
     }
 }
