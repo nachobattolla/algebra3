@@ -1,13 +1,14 @@
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import tp1.Guide1;
-import tp1.Guide1Solution;
+import tp1.Guide1IterativeSolution;
+import tp1.Guide1RecursiveSolution;
 import utils.SkipRule;
 
 import static org.junit.Assert.*;
 
 public class Guide1Test extends SkipRule {
-    Guide1 guide1 = new Guide1Solution();
+    Guide1 guide1 = new Guide1IterativeSolution();
 
     @Test
     public void exercise_1_a() {

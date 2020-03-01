@@ -2,7 +2,7 @@ package tp1;
 
 import java.util.List;
 
-public class Guide1Solution implements Guide1 {
+public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_1_a(int n) {
