@@ -1,14 +1,31 @@
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import tp1.Guide1;
 import tp1.Guide1IterativeSolution;
 import tp1.Guide1RecursiveSolution;
 import utils.SkipRule;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
 import static org.junit.Assert.*;
 
+@RunWith(Parameterized.class)
 public class Guide1Test extends SkipRule {
-    Guide1 guide1 = new Guide1IterativeSolution();
+    private Guide1 guide1;
+
+    public Guide1Test(Guide1 guide) {
+        guide1 = guide;
+    }
+
+    @Parameterized.Parameters(name = "{0}")
+    public static Collection<Guide1> parameters() {
+        return new ArrayList<>(Arrays.asList(new Guide1IterativeSolution(), new Guide1RecursiveSolution()));
+    }
+
 
     @Test
     public void exercise_1_a() {
