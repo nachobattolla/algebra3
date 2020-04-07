@@ -98,9 +98,10 @@ public class Guide6Test extends SkipRule {
     }
 
     @Test
+    //    El primer elemento no puede ser negativo, si el primer elemento es negativo debe devolver falso"
     public void exercise_4() {
         assertTrue(guide6.exercise_4(new int[]{3, -1, 3, -5}));
-        assertTrue(guide6.exercise_4(new int[]{-3, 11, -3, -5}));
+        assertFalse(guide6.exercise_4(new int[]{-3, 11, -3, -5}));
         assertTrue(guide6.exercise_4(new int[]{0, 5, -3, -2}));
         assertFalse(guide6.exercise_4(new int[]{0, 5, -3, -2, 1}));
         assertFalse(guide6.exercise_4(new int[]{1, -8, 3, 11, -7}));
