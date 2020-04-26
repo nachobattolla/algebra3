@@ -69,6 +69,25 @@ public class Guide7Test extends SkipRule {
     }
 
     @Test
+    public void exercise_1_h() {
+        assertEquals(9, guide7.exercise_1_h(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
+        assertEquals(6, guide7.exercise_1_h(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}));
+    }
+
+    @Test
+    public void exercise_1_i() {
+        assertEquals(6, guide7.exercise_1_i(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
+        assertEquals(1, guide7.exercise_1_i(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}));
+        assertEquals(0, guide7.exercise_1_i(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 6}}));
+    }
+
+    @Test
+    public void exercise_1_j() {
+        assertArrayEquals(new int[][]{{-3, -6, -9, -12}, {-15, -18, -21, -24}, {-27, -30, -33, -36}, {-39, -42, -45, -48}}, guide7.exercise_1_j(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}, -3));
+        assertArrayEquals(new int[][]{{-10, 10, 5}, {5, 15, 10}, {5, -10, 0}}, guide7.exercise_1_j(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}, 5));
+    }
+
+    @Test
     public void exercise_2_a() {
         assertTrue(guide7.exercise_2_a(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
         assertFalse(guide7.exercise_2_a(new int[][]{{1, 0, 1}, {0, 1, 0}, {0, 0, 1}}));
@@ -86,10 +105,12 @@ public class Guide7Test extends SkipRule {
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}), new Vector(new int[]{7, 8, 9}));
         assertEquals(new Vector(new int[]{24, 17, 9}), guide7.exercise_3_a_i(op1).getResult());
         assertTrue(op1.getCounter() <= 12);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Vector(new int[]{1, 2, 3, 4}));
         assertEquals(new Vector(new int[]{10, 9, 7, 4}), guide7.exercise_3_a_i(op2).getResult());
         assertTrue(op2.getCounter() <= 20);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -97,10 +118,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}}), new Matrix(new int[][]{{1, 2, 3}, {9, 5, 6}, {9, 9, 9}}));
         assertEquals(new Matrix(new int[][]{{2, 4, 6}, {0, 10, 12}, {0, 0, 18}}), guide7.exercise_3_a_ii(op1).getResult());
         assertTrue(op1.getCounter() <= 12);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3,}, {0, 0, 0, 3}}), guide7.exercise_3_a_ii(op2).getResult());
         assertTrue(op2.getCounter() <= 20);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -108,10 +131,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2}, {9, 2, 2}, {9, 9, 2}}));
         assertEquals(new Matrix(new int[][]{{2, 4, 6}, {0, 2, 4}, {0, 0, 2}}), guide7.exercise_3_a_iii(op1).getResult());
         assertTrue(op1.getCounter() <= 20);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}, {9, 9, 9, 2}}));
         assertEquals(new Matrix(new int[][]{{2, 4, 6, 8}, {0, 2, 4, 6}, {0, 0, 2, 4}, {0, 0, 0, 2}}), guide7.exercise_3_a_iii(op2).getResult());
         assertTrue(op2.getCounter() <= 40);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -119,10 +144,12 @@ public class Guide7Test extends SkipRule {
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Vector(new int[]{2, 3, 4}));
         assertEquals(new Vector(new int[]{5, 9, 9}), guide7.exercise_3_b_i(op1).getResult());
         assertTrue(op1.getCounter() <= 16);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
         assertEquals(new Vector(new int[]{3, 6, 10, 10}), guide7.exercise_3_b_i(op2).getResult());
         assertTrue(op2.getCounter() <= 26);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -130,10 +157,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 0}, {3, 3, 3}, {3, 3, 3}}), guide7.exercise_3_b_ii(op1).getResult());
         assertTrue(op1.getCounter() <= 16);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {3, 3, 3, 3,}, {3, 3, 3, 3}}), guide7.exercise_3_b_ii(op2).getResult());
         assertTrue(op2.getCounter() <= 26);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -141,10 +170,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {2, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 4, 2}, {6, 6, 4}, {6, 6, 4}}), guide7.exercise_3_b_iii(op1).getResult());
         assertTrue(op1.getCounter() <= 42);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}, {1, 1, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {2, 2, 2, 2}, {2, 2, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 4, 2, 0}, {6, 6, 4, 2}, {8, 8, 6, 4}, {8, 8, 6, 4}}), guide7.exercise_3_b_iii(op2).getResult());
         assertTrue(op2.getCounter() <= 80);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -152,10 +183,12 @@ public class Guide7Test extends SkipRule {
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Vector(new int[]{2, 3, 4}));
         assertEquals(new Vector(new int[]{5, 9, 7}), guide7.exercise_3_c_i(op1).getResult());
         assertTrue(op1.getCounter() <= 14);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
         assertEquals(new Vector(new int[]{3, 6, 9, 7}), guide7.exercise_3_c_i(op2).getResult());
         assertTrue(op2.getCounter() <= 20);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -163,10 +196,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 0}, {3, 3, 3}, {0, 3, 3}}), guide7.exercise_3_c_ii(op1).getResult());
         assertTrue(op1.getCounter() <= 16);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 0, 0}, {3, 3, 3, 0}, {0, 3, 3, 3,}, {0, 0, 3, 3}}), guide7.exercise_3_c_ii(op2).getResult());
         assertTrue(op2.getCounter() <= 26);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -174,10 +209,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9}, {2, 2, 2}, {9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 4, 2}, {4, 6, 4}, {2, 4, 4}}), guide7.exercise_3_c_iii(op1).getResult());
         assertTrue(op1.getCounter() <= 34);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 9, 9}, {1, 1, 1, 9}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 9, 9}, {2, 2, 2, 9}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 4, 2, 0}, {4, 6, 4, 2}, {2, 4, 6, 4}, {0, 2, 4, 4}}), guide7.exercise_3_c_iii(op2).getResult());
         assertTrue(op2.getCounter() <= 52);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -185,10 +222,12 @@ public class Guide7Test extends SkipRule {
         MatrixVectorOperation op1 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Vector(new int[]{2, 3, 4}));
         assertEquals(new Vector(new int[]{9, 9, 7}), guide7.exercise_3_d_i(op1).getResult());
         assertTrue(op1.getCounter() <= 16);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixVectorOperation op2 = new MatrixVectorOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 1, 1, 1}}), new Vector(new int[]{1, 2, 3, 4}));
         assertEquals(new Vector(new int[]{10, 10, 9, 7}), guide7.exercise_3_d_i(op2).getResult());
         assertTrue(op2.getCounter() <= 26);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -196,10 +235,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 3}, {3, 3, 3}, {0, 3, 3}}), guide7.exercise_3_d_ii(op1).getResult());
         assertTrue(op1.getCounter() <= 16);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{3, 3, 3, 3}, {3, 3, 3, 3}, {0, 3, 3, 3}, {0, 0, 3, 3}}), guide7.exercise_3_d_ii(op2).getResult());
         assertTrue(op2.getCounter() <= 26);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -207,10 +248,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1}, {1, 1, 1}, {9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2}, {2, 2, 2}, {9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 6, 6}, {4, 6, 6}, {2, 4, 4}}), guide7.exercise_3_d_iii(op1).getResult());
         assertTrue(op1.getCounter() <= 42);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}}), new Matrix(new int[][]{{2, 2, 2, 2}, {2, 2, 2, 2}, {9, 2, 2, 2}, {9, 9, 2, 2}}));
         assertEquals(new Matrix(new int[][]{{4, 6, 8, 8}, {4, 6, 8, 8}, {2, 4, 6, 6}, {0, 2, 4, 4}}), guide7.exercise_3_d_iii(op2).getResult());
         assertTrue(op2.getCounter() <= 80);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -218,10 +261,12 @@ public class Guide7Test extends SkipRule {
         MatrixMatrixOperation op1 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 9, 9}, {1, 1, 9}, {1, 1, 1}}), new Matrix(new int[][]{{1, 1, 1}, {9, 1, 1}, {9, 9, 1}}));
         assertEquals(new Matrix(new int[][]{{1, 1, 1}, {1, 2, 2}, {1, 2, 3}}), guide7.exercise_3_e(op1).getResult());
         assertTrue(op1.getCounter() <= 28);
+        assertTrue(op1.getCounter() > 0);
 
         MatrixMatrixOperation op2 = new MatrixMatrixOperation(new Matrix(new int[][]{{1, 9, 9, 9}, {1, 1, 9, 9}, {1, 1, 1, 9}, {1, 1, 1, 1}}), new Matrix(new int[][]{{1, 1, 1, 1}, {9, 1, 1, 1}, {9, 9, 1, 1}, {9, 9, 9, 1}}));
         assertEquals(new Matrix(new int[][]{{1, 1, 1, 1}, {1, 2, 2, 2}, {1, 2, 3, 3}, {1, 2, 3, 4}}), guide7.exercise_3_e(op2).getResult());
         assertTrue(op2.getCounter() <= 60);
+        assertTrue(op2.getCounter() > 0);
     }
 
     @Test
@@ -240,24 +285,6 @@ public class Guide7Test extends SkipRule {
         List<double[]> result3 = guide7.exercise_4(vectors3);
         norm_1_test(result3);
         orthogonal_test(result3);
-    }
-
-    @Test
-    public void exercise_5_a() {
-        assertEquals(9, guide7.exercise_5_a(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
-        assertEquals(6, guide7.exercise_5_a(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}));
-    }
-
-    @Test
-    public void exercise_5_b() {
-        assertEquals(6, guide7.exercise_5_b(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 2, 3}}));
-        assertEquals(1, guide7.exercise_5_b(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}));
-    }
-
-    @Test
-    public void exercise_5_c() {
-        assertArrayEquals(new int[][]{{-3, -6, -9, -12}, {-15, -18, -21, -24}, {-27, -30, -33, -36}, {-39, -42, -45, -48}}, guide7.exercise_5_c(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}, -3));
-        assertArrayEquals(new int[][]{{-10, 10, 5}, {5, 15, 10}, {5, -10, 0}}, guide7.exercise_5_c(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}, 5));
     }
 
     private void orthogonal_test(List<double[]> result) {
