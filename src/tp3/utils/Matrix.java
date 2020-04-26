@@ -33,6 +33,6 @@ public class Matrix {
             return false;
         }
 
-        return Arrays.equals(matrix, ((Matrix) obj).matrix);
+        return Arrays.deepEquals(matrix, ((Matrix) obj).matrix);
     }
 }
