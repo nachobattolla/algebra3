@@ -26,9 +26,9 @@ public class Guide7Test extends SkipRule {
 
     @Test
     public void exercise_1_b() {
-        assertEquals(4, guide7.exercise_1_b(new int[][]{{2, 3}, {4, 5}}));
+        assertEquals(7, guide7.exercise_1_b(new int[][]{{2, 3}, {4, 5}}));
         assertEquals(1, guide7.exercise_1_b(new int[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}));
-        assertEquals(30, guide7.exercise_1_b(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
+        assertEquals(34, guide7.exercise_1_b(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}));
     }
 
     @Test
