@@ -96,7 +96,7 @@ public class Guide7Test extends SkipRule {
 
     @Test
     public void exercise_2_b() {
-        assertTrue(guide7.exercise_2_b(new int[][]{{3, -2, 1}, {1, -4, 2}, {-1, 2, 4}}));
+        assertTrue(guide7.exercise_2_b(new int[][]{{4, -2, 1}, {1, -4, 2}, {-1, 2, 4}}));
         assertFalse(guide7.exercise_2_b(new int[][]{{-2, 2, 1}, {1, 3, 2}, {1, -2, 0}}));
     }
 
