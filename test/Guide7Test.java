@@ -274,17 +274,14 @@ public class Guide7Test extends SkipRule {
     public void exercise_4() {
         ArrayList<double[]> vectors1 = new ArrayList<>(Arrays.asList(new double[]{2, 2, 0}, new double[]{1, 1, 1}));
         List<double[]> result1 = guide7.exercise_4(vectors1);
-        norm_1_test(result1);
         orthogonal_test(result1);
 
         ArrayList<double[]> vectors2 = new ArrayList<>(Arrays.asList(new double[]{0, 0, 1, 1}, new double[]{0, 1, 1, 0}, new double[]{1, 1, 0, 0}));
         List<double[]> result2 = guide7.exercise_4(vectors2);
-        norm_1_test(result2);
         orthogonal_test(result2);
 
         ArrayList<double[]> vectors3 = new ArrayList<>(Arrays.asList(new double[]{1, 3}, new double[]{-1, 2}));
         List<double[]> result3 = guide7.exercise_4(vectors3);
-        norm_1_test(result3);
         orthogonal_test(result3);
     }
 
@@ -297,9 +294,4 @@ public class Guide7Test extends SkipRule {
         }
     }
 
-    private void norm_1_test(List<double[]> result) {
-        for (double[] normalizedVector : result) {
-            assertEquals(1.0, Guide6Helpers.norm(normalizedVector), 0.1);
-        }
-    }
 }
