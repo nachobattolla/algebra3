@@ -1,14 +1,17 @@
 import org.junit.Test;
 import tp4.Guide8;
 import tp4.Guide8Solution;
+import tp4.answers.utils.MatrixContainer;
 import utils.Guide7Helpers;
+import utils.Guide8Helpers;
 import utils.SkipRule;
 
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.*;
 
 public class Guide8Test extends SkipRule {
     Guide8 guide8 = new Guide8Solution();
 
+    //    TODO check
     @Test
     public void exercise_5_a() {
         double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
@@ -40,6 +43,7 @@ public class Guide8Test extends SkipRule {
         assertArrayEquals(multiplication, vector, 0.0);
     }
 
+    //    TODO check
     @Test
     public void exercise_6() {
         double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
@@ -53,6 +57,7 @@ public class Guide8Test extends SkipRule {
         testGauss(matrix2, vector2, result2);
     }
 
+    //    TODO check
     @Test
     public void exercise_7() {
         double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
@@ -94,4 +99,24 @@ public class Guide8Test extends SkipRule {
             assertArrayEquals(matrix[i], identity[i], 0.1);
         }
     }
+
+    @Test
+    public void exercise_10() {
+        double[][] A1 = {{2, -1, -2}, {-4, 6, 3}, {-4, -2, 8}};
+        MatrixContainer result1 = guide8.exercise_10(A1);
+        assertTrue(Guide8Helpers.check_lower_triangular(result1.getLower()));
+        assertTrue(Guide8Helpers.check_upper_triangular(result1.getUpper()));
+
+        double[][] multiplication1 = Guide7Helpers.matrix_by_matrix(result1.getLower(), result1.getUpper());
+        assertEquals(A1, multiplication1);
+
+        double[][] A2 = {{2, 4, 3, 5}, {-4, -7, -5, -8}, {6, 8, 2, 9}, {4, 9, -2, 14}};
+        MatrixContainer result2 = guide8.exercise_10(A2);
+        assertTrue(Guide8Helpers.check_lower_triangular(result2.getLower()));
+        assertTrue(Guide8Helpers.check_upper_triangular(result2.getUpper()));
+
+        double[][] multiplication2 = Guide7Helpers.matrix_by_matrix(result2.getLower(), result2.getUpper());
+        assertEquals(A2, multiplication2);
+    }
+
 }
