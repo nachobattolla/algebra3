@@ -42,30 +42,28 @@ public class Guide8Test extends SkipRule {
         assertArrayEquals(multiplication, vector, 0.0);
     }
 
-    //    TODO check
     @Test
     public void exercise_6() {
-        double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
-        double[] vector1 = {4, 2, 36};
+        double[][] matrix1 = {{-2, 4, 7}, {7, 2, -3}, {0, 3, -1}};
+        double[] vector1 = {-5, 72, -25};
         double[] result1 = guide8.exercise_6(matrix1, vector1);
         testGauss(matrix1, vector1, result1);
 
-        double[][] matrix2 = {{1, 3, 2, 5}, {-1, 2, -2, 5}, {2, 6, 4, 7}, {0, 5, 2, 6}};
-        double[] vector2 = {11, -6, 19, 5};
+        double[][] matrix2 = {{2, 0, -3, 4}, {-1, 6, 1, -13}, {0, 2, 0, -11}, {0, 0, 14, -23}};
+        double[] vector2 = {-7, -43, -14, 126};
         double[] result2 = guide8.exercise_6(matrix2, vector2);
         testGauss(matrix2, vector2, result2);
     }
 
-    //    TODO check
     @Test
     public void exercise_7() {
-        double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
-        double[] vector1 = {4, 2, 36};
+        double[][] matrix1 = {{-3, 4, 0, 0, 0}, {4, -1, 3, 0, 0}, {0, 3, -4, 11, 0}, {0, 0, 11, -7, 1}, {0, 0, 0, 1, -5}};
+        double[] vector1 = {-22, 37, -19, 52, -40};
         double[] result1 = guide8.exercise_7(matrix1, vector1);
         testGauss(matrix1, vector1, result1);
 
-        double[][] matrix2 = {{1, 3, 2, 5}, {-1, 2, -2, 5}, {2, 6, 4, 7}, {0, 5, 2, 6}};
-        double[] vector2 = {11, -6, 19, 5};
+        double[][] matrix2 = {{1, 3, 0, 0}, {3, 6, -7, 0}, {0, -7, 1, -2}, {0, 0, -2, 5}};
+        double[] vector2 = {-19, -54, 39, 44};
         double[] result2 = guide8.exercise_7(matrix2, vector2);
         testGauss(matrix2, vector2, result2);
     }
