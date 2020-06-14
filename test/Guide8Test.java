@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 public class Guide8Test extends SkipRule {
     Guide8 guide8 = new Guide8Solution();
 
-    //    TODO check
     @Test
     public void exercise_5_a() {
         double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
@@ -108,7 +107,7 @@ public class Guide8Test extends SkipRule {
         assertTrue(Guide8Helpers.check_upper_triangular(result1.getUpper()));
 
         double[][] multiplication1 = Guide7Helpers.matrix_by_matrix(result1.getLower(), result1.getUpper());
-        assertEquals(A1, multiplication1);
+        assertArrayEquals(A1, multiplication1);
 
         double[][] A2 = {{2, 4, 3, 5}, {-4, -7, -5, -8}, {6, 8, 2, 9}, {4, 9, -2, 14}};
         MatrixContainer result2 = guide8.exercise_10(A2);
@@ -116,7 +115,7 @@ public class Guide8Test extends SkipRule {
         assertTrue(Guide8Helpers.check_upper_triangular(result2.getUpper()));
 
         double[][] multiplication2 = Guide7Helpers.matrix_by_matrix(result2.getLower(), result2.getUpper());
-        assertEquals(A2, multiplication2);
+        assertArrayEquals(A2, multiplication2);
     }
 
 }
