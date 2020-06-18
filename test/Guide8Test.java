@@ -13,8 +13,8 @@ public class Guide8Test extends SkipRule {
 
     @Test
     public void exercise_5_a() {
-        double[][] matrix1 = {{0, 1, 1}, {2, 4, -2}, {0, 3, 15}};
-        double[] vector1 = {4, 2, 36};
+        double[][] matrix1 = {{2, 1, -3}, {5, -4, 1}, {1, -1, -4}};
+        double[] vector1 = {7, -19, 4};
         double[] result1 = guide8.exercise_5_a(matrix1, vector1);
         testGauss(matrix1, vector1, result1);
 
