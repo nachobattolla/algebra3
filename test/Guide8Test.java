@@ -44,7 +44,7 @@ public class Guide8Test extends SkipRule {
 
     private void testGauss(double[][] matrix, double[] vector, double[] result) {
         double[] multiplication = Guide7Helpers.matrix_times_vector(matrix, result);
-        assertArrayEquals(multiplication, vector, 0.0);
+        assertArrayEquals(multiplication, vector, 0.01);
     }
 
     @Test
