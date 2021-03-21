@@ -3,7 +3,7 @@ package tp1;
 import java.util.List;
 
 public interface Guide1 {
-    int exercise_1_a(int n);
+    abstract int exercise_1_a(int n);
 
     int exercise_1_b(int n);
 

@@ -16,6 +16,14 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_1_c(int p, int n) {
+        int sum = 0;
+        if (n>=0) {
+            for (int i = 0; i <= n; i++) {
+                sum = (int) (sum + Math.pow(p, i));
+
+            }
+            return sum;
+        }
         throw new UnsupportedOperationException("TODO");
     }
 
