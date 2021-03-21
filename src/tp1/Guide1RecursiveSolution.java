@@ -64,6 +64,22 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_2_d(int a, int b) {
+        int resto = a%b;
+        int auxResto;
+
+        if (b != 0) {
+            if (resto == 0) {
+                return b;
+            } else if (a == 0) {
+                return b;
+            } else {
+                auxResto = resto;
+                resto = b % resto;
+                b = auxResto;
+                return b;
+
+            }
+        }
         throw new UnsupportedOperationException("TODO");
     }
 

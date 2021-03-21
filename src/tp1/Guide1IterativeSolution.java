@@ -25,6 +25,7 @@ public class Guide1IterativeSolution implements Guide1 {
             return sum;
         }
         throw new UnsupportedOperationException("TODO");
+
     }
 
     @Override
@@ -59,20 +60,24 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_2_d(int a, int b) {
+
         int resto = a%b;
-        if ( resto == 0){
-            return b;
-        }else if (a==0)
-            return b;
-        else if (b==0)
-            return a;
-        else{
-            while (resto != 0){
+        int auxResto;
 
+        if (b != 0) {
+            if (resto == 0) {
+                return b;
+            } else if (a == 0) {
+                return b;
+            } else {
+                while (resto != 0) {
+                    auxResto = resto;
+                    resto = b % resto;
+                    b = auxResto;
+                }
+                return b;
             }
-
         }
-
         throw new UnsupportedOperationException("TODO");
     }
 

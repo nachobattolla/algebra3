@@ -21,11 +21,11 @@ public interface Guide1 {
 
     int exercise_2_c(int n);
 
-    int exercise_2_d(int a, int b);
+    int exercise_2_d(int a, int b); // tenemos que hacer este ejercicio
 
     int exercise_3(int n);
 
-    boolean exercise_4(int[] array);
+    boolean exercise_4(int[] array); // tenemos que hacer este ejercicio
 
     boolean exercise_5(int[] array, int n);
 
@@ -35,8 +35,8 @@ public interface Guide1 {
 
     int exercise_6_b_iii(int n);
 
-    List<Integer> exercise_6_b_iv(int n);
+    List<Integer> exercise_6_b_iv(int n); // tenemos que hacer este
 
-    int exercise_8(int[] coefs, int n);
+    int exercise_8(int[] coefs, int n); // tenemos que hacer este ej
 
 }
