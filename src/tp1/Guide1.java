@@ -7,7 +7,7 @@ public interface Guide1 {
 
     int exercise_1_b(int n);
 
-    int exercise_1_c(int p, int n);
+    int exercise_1_c(int p, int n);// tenemos que hacer este
 
     int exercise_1_d(int n);
 
