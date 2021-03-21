@@ -50,7 +50,7 @@ public class Guide1Test extends SkipRule {
     }
 
     @Test
-    public void exercise_1_c() {
+    public void exercise_1_c() { //
         assertEquals(2, guide1.exercise_1_c(1, 1));
         assertEquals(15, guide1.exercise_1_c(2, 3));
         assertEquals(13, guide1.exercise_1_c(3, 2));
