@@ -25,7 +25,7 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     }
 
-    public int excercise1Aux(int p , int n,int i,int sum){
+    private int excercise1Aux(int p , int n,int i,int sum){
 
         if (i<=n) {
             sum = (int) (sum + Math.pow(p,i));
@@ -97,17 +97,19 @@ public class Guide1RecursiveSolution implements Guide1 {
     public boolean exercise_4(int[] array) {
         return exercise_4Aux(array,0,array.length,false);
     }
-private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
-    if (i<n/2){
-        if (array[i]== array[n-1]){
-            capicúa=true;
-        }else capicúa=false;
 
+    private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
+        if (i<n/2){
+            if (array[i]== array[n-1]){
+                capicúa=true;
+            }else {
+                capicúa = false;
+            }
         return exercise_4Aux(array, ++i, --n, capicúa);
-    }
+        }
 
-    return capicúa;
-}
+        return capicúa;
+    }
 
     @Override
     public boolean exercise_5(int[] array, int n) {
@@ -135,24 +137,37 @@ private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
         List list = new ArrayList();
         int index= 0;
         int num = primos[index];
-        return exercise_6_b_ivAux(n,primos,list,0,num);
+        return exercise_6_b_ivAux(n,primos,list,0);
     }
-    private List<Integer> exercise_6_b_ivAux (int n, int[] primos, List list, int index, int num) {
+
+    private List<Integer> exercise_6_b_ivAux (int n, int[] primos, List list, int index) {
+        int num = primos[index];
         if(n!=1){
             while(n%num==0)
             {
                 list.add(num);
                 n /= num;
             }
-            index ++;
-            num = primos[index];
-            return exercise_6_b_ivAux(n,primos,list,index,num);
+            index++;
+            return exercise_6_b_ivAux(n,primos,list,index);
         }
         return list;
     }
 
     @Override
     public int exercise_8(int[] coefs, int n) {
-        throw new UnsupportedOperationException("TODO");
+
+        return exercise_8Aux(coefs,n,coefs.length-1,0);
+
     }
+
+    private int exercise_8Aux(int[] coefs, int n, int i, int result){
+        if (i < 0){
+            return result;
+        }else {
+            result = result*n + coefs[i];
+            return exercise_8Aux(coefs,n,i-1,result);
+        }
+    }
+
 }

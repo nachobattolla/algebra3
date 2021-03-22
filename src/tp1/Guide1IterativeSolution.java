@@ -107,7 +107,7 @@ public class Guide1IterativeSolution implements Guide1 {
     public boolean exercise_4(int[] array) {
 
         int n = array.length;
-        boolean capicúa = true;
+        boolean capicúa = false;
 
         for (int i = 0; i < n/2; i++) {
             if (array[i] == array[n-1]){
@@ -118,7 +118,6 @@ public class Guide1IterativeSolution implements Guide1 {
                 return capicúa;
             }
         }
-
         return capicúa;
 
     }
@@ -164,6 +163,11 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_8(int[] coefs, int n) {
-        throw new UnsupportedOperationException("TODO");
+        int result = 0;
+
+        for (int i = coefs.length - 1; i >= 0; i--) {
+            result = coefs[i] + (n * result);
+        }
+        return result;
     }
 }
