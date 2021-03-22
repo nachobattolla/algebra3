@@ -64,28 +64,22 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_2_d(int a, int b) {
-        if(a >= b) {
-            return exercise_2_dAux(a, b, a % b);
-        }else {
-            return exercise_2_dAux(b, a, b % a);
-        }
+     return exercise_2_dAux(a,b,a%b);
     }
-
     private int exercise_2_dAux(int a, int b, int c) {
-        int auxC;
+                if (c == 0) {
+                return b;
+            } else if (a == 0) {
+                return b;
+            } else if (c != 0){
+                int auxResto = c;
+                c = b % c;
+                b = auxResto;
+                exercise_2_dAux(b,c, b%c);
 
-        if (b==0) {
-            return a;
-        }else if(c == 0 || a == 0) {
+            }
             return b;
-        }else {
-            auxC = c;
-            c = b % c;
-            b = auxC;
-            return exercise_2_dAux(b, c, b%c);
-        }
     }
-
 
     @Override
     public int exercise_3(int n) {
@@ -94,7 +88,6 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public boolean exercise_4(int[] array) {
-
         throw new UnsupportedOperationException("TODO");
     }
 
