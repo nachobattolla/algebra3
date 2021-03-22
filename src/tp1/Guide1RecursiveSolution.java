@@ -18,17 +18,15 @@ public class Guide1RecursiveSolution implements Guide1 {
     public int exercise_1_c(int p, int n) {
         int sum;
         if(n>=0){
-            sum =excercise1Aux(p,n,0,0);
-        return sum;
+        return excercise1Aux(p,n,0,0);
         }
         else
         throw new UnsupportedOperationException("TODO");
     }
     public int excercise1Aux(int p , int n,int i,int sum){
-        if (i<n) {
+        if (i<=n) {
             sum = (int) (sum + Math.pow(p,i));
-            i = i+1;
-            excercise1Aux(p,n,i,sum);
+             return excercise1Aux(p,n,++i,sum);
         }
         return sum;
     }
@@ -64,29 +62,25 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_2_d(int a, int b) {
-
-        if (a>=b) {
-            return exercise_2_dAux(a, b, a % b);
-        }else{
-            return exercise_2_dAux(b, a, b % a);
-        }
-
+        if (a>=b)
+        return exercise_2_dAux(a,b,a%b);
+        else
+            return exercise_2_dAux(b,a,b%a);
     }
-
     private int exercise_2_dAux(int a, int b, int c) {
-        int auxC;
-
-        if (b == 0) {
-            return a;
-        } else if (c == 0|| a == 0) {
+        if (c == 0) {
+            return b;
+        } else if (a == 0) {
             return b;
         } else if (c != 0){
-            auxC = c;
+            int auxResto = c;
             c = b % c;
-            b = auxC;
-            return exercise_2_dAux(b,c, b%c);
+            b = auxResto;
+            exercise_2_dAux(b,c, b%c);
+
         }
-        return -1;
+            return b;
+
     }
 
     @Override
