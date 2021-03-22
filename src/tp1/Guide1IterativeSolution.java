@@ -65,9 +65,7 @@ public class Guide1IterativeSolution implements Guide1 {
         int auxResto;
 
         if (b != 0) {
-            if (resto == 0) {
-                return b;
-            } else if (a == 0) {
+            if (resto == 0 || a == 0) {
                 return b;
             } else {
                 while (resto != 0) {
@@ -88,7 +86,22 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public boolean exercise_4(int[] array) {
-        throw new UnsupportedOperationException("TODO");
+
+        int n = array.length;
+        boolean capicúa = true;
+
+        for (int i = 0; i < n; i++) {
+            if (array[i] == array[n-1]){
+                capicúa = true;
+                n--;
+            }else{
+                capicúa = false;
+                return capicúa;
+            }
+        }
+
+        return capicúa;
+
     }
 
     @Override
