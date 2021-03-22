@@ -19,17 +19,17 @@ public class Guide1RecursiveSolution implements Guide1 {
     public int exercise_1_c(int p, int n) {
 
         if(n>=0){
-            return excercise1Aux(p,n,0,0);
+            return excercise_1c_Aux(p,n,0,0);
         }
         throw new UnsupportedOperationException("TODO");
 
     }
 
-    private int excercise1Aux(int p , int n,int i,int sum){
+    private int excercise_1c_Aux(int p , int n,int i,int sum){
 
         if (i<=n) {
             sum = (int) (sum + Math.pow(p,i));
-            return excercise1Aux(p,n,++i,sum);
+            return excercise_1c_Aux(p,n,++i,sum);
         }
         return sum;
 
@@ -73,18 +73,18 @@ public class Guide1RecursiveSolution implements Guide1 {
         }
     }
 
-    private int exercise_2_dAux(int a, int b, int c) {
-        int auxC;
+    private int exercise_2_dAux(int a, int b, int r) {
+        int auxR;
 
         if (b == 0) {
             return a;
-        } else if (c == 0||a == 0) {
+        } else if (r == 0||a == 0) {
             return b;
         } else {
-            auxC = c;
-            c = b % c;
-            b = auxC;
-            return exercise_2_dAux(b,c, b%c);
+            auxR = r;
+            r = b % r;
+            b = auxR;
+            return exercise_2_dAux(b, r, b% r);
         }
     }
 
@@ -98,17 +98,17 @@ public class Guide1RecursiveSolution implements Guide1 {
         return exercise_4Aux(array,0,array.length,false);
     }
 
-    private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
+    private boolean exercise_4Aux(int[] array,int i,int n,boolean palindromic) {
         if (i<n/2){
             if (array[i]== array[n-1]){
-                capicúa=true;
+                palindromic =true;
             }else {
-                capicúa = false;
+                palindromic = false;
             }
-        return exercise_4Aux(array, ++i, --n, capicúa);
+        return exercise_4Aux(array, ++i, --n, palindromic);
         }
 
-        return capicúa;
+        return palindromic;
     }
 
     @Override
@@ -133,25 +133,23 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public List<Integer> exercise_6_b_iv(int n) {
-        int[] primos = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
-        List list = new ArrayList();
-        int index= 0;
-        int num = primos[index];
-        return exercise_6_b_ivAux(n,primos,list,0);
+        int[] primes = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
+        List factors = new ArrayList();
+        return exercise_6_b_ivAux(n, primes, factors,0);
     }
 
-    private List<Integer> exercise_6_b_ivAux (int n, int[] primos, List list, int index) {
-        int num = primos[index];
+    private List<Integer> exercise_6_b_ivAux (int n, int[] primes, List factors, int index) {
+        int num = primes[index];
         if(n!=1){
             while(n%num==0)
             {
-                list.add(num);
+                factors.add(num);
                 n /= num;
             }
             index++;
-            return exercise_6_b_ivAux(n,primos,list,index);
+            return exercise_6_b_ivAux(n,primes, factors,index);
         }
-        return list;
+        return factors;
     }
 
     @Override
@@ -165,7 +163,7 @@ public class Guide1RecursiveSolution implements Guide1 {
         if (i < 0){
             return result;
         }else {
-            result = result*n + coefs[i];
+            result = (result * n) + coefs[i];
             return exercise_8Aux(coefs,n,i-1,result);
         }
     }

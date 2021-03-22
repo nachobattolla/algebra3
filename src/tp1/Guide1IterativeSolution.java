@@ -62,36 +62,36 @@ public class Guide1IterativeSolution implements Guide1 {
     @Override
     public int exercise_2_d(int a, int b) {
 
-        int resto;
-        int auxResto;
+        int r;
+        int auxR;
 
         if (a>=b) {
-            resto = a%b;
+            r = a%b;
 
-            if (resto == 0 || a == 0) {
+            if (r == 0 || a == 0) {
                 return b;
             } else if (b == 0) {
                 return a;
             } else {
-                while (resto != 0) {
-                    auxResto = resto;
-                    resto = b % resto;
-                    b = auxResto;
+                while (r != 0) {
+                    auxR = r;
+                    r = b % r;
+                    b = auxR;
                 }
                 return b;
             }
         }else{
-            resto = b%a;
+            r = b%a;
 
-            if (resto == 0 || b == 0) {
+            if (r == 0 || b == 0) {
                 return a;
             } else if (a == 0) {
                 return b;
             } else {
-                while (resto != 0) {
-                    auxResto = resto;
-                    resto = a % resto;
-                    a = auxResto;
+                while (r != 0) {
+                    auxR = r;
+                    r = a % r;
+                    a = auxR;
                 }
                 return a;
             }
@@ -107,18 +107,18 @@ public class Guide1IterativeSolution implements Guide1 {
     public boolean exercise_4(int[] array) {
 
         int n = array.length;
-        boolean capicúa = false;
+        boolean palindromic = false;
 
         for (int i = 0; i < n/2; i++) {
             if (array[i] == array[n-1]){
-                capicúa = true;
+                palindromic = true;
                 n--;
             }else{
-                capicúa = false;
-                return capicúa;
+                palindromic = false;
+                return palindromic;
             }
         }
-        return capicúa;
+        return palindromic;
 
     }
 
@@ -144,21 +144,21 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public List<Integer> exercise_6_b_iv(int n) {
-        int[] primos = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
-        List list = new ArrayList();
+        int[] primes = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
+        List factors = new ArrayList();
             int index= 0;
-            int num = primos[index];
+            int num = primes[index];
             while(n!=1)
             {
                 while(n%num==0)
                 {
-                   list.add(num);
+                   factors.add(num);
                     n /= num;
                 }
                 index ++;
-                num = primos[index];
+                num = primes[index];
             }
-            return  list;
+            return factors;
         }
 
     @Override
