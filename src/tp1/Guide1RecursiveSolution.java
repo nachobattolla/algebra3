@@ -64,21 +64,21 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_2_d(int a, int b) {
-     return exercise_2_dAux(a,b,a%b);
+        return exercise_2_dAux(a,b,a%b);
     }
     private int exercise_2_dAux(int a, int b, int c) {
-                if (c == 0) {
-                return b;
-            } else if (a == 0) {
-                return b;
-            } else if (c != 0){
-                int auxResto = c;
-                c = b % c;
-                b = auxResto;
-                exercise_2_dAux(b,c, b%c);
-
-            }
+        if (c == 0) {
             return b;
+        } else if (a == 0) {
+            return b;
+        } else if (c != 0){
+            int auxResto = c;
+            c = b % c;
+            b = auxResto;
+            exercise_2_dAux(b,c, b%c);
+
+        }
+        return b;
     }
 
     @Override
