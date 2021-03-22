@@ -90,7 +90,7 @@ public class Guide1IterativeSolution implements Guide1 {
         int n = array.length;
         boolean capicúa = true;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n/2; i++) {
             if (array[i] == array[n-1]){
                 capicúa = true;
                 n--;
