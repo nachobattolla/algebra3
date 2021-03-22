@@ -1,5 +1,6 @@
 package tp1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Guide1RecursiveSolution implements Guide1 {
@@ -130,7 +131,24 @@ private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
 
     @Override
     public List<Integer> exercise_6_b_iv(int n) {
-        throw new UnsupportedOperationException("TODO");
+        int[] primos = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
+        List list = new ArrayList();
+        int index= 0;
+        int num = primos[index];
+        return exercise_6_b_ivAux(n,primos,list,0,num);
+    }
+    private List<Integer> exercise_6_b_ivAux (int n, int[] primos, List list, int index, int num) {
+        if(n!=1){
+            while(n%num==0)
+            {
+                list.add(num);
+                n /= num;
+            }
+            index ++;
+            num = primos[index];
+            return exercise_6_b_ivAux(n,primos,list,index,num);
+        }
+        return list;
     }
 
     @Override

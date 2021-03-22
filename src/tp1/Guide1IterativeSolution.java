@@ -145,8 +145,10 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public List<Integer> exercise_6_b_iv(int n) {
+        int[] primos = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 , 97};
         List list = new ArrayList();
-            int num = 2;
+            int index= 0;
+            int num = primos[index];
             while(n!=1)
             {
                 while(n%num==0)
@@ -154,6 +156,8 @@ public class Guide1IterativeSolution implements Guide1 {
                    list.add(num);
                     n /= num;
                 }
+                index ++;
+                num = primos[index];
             }
             return  list;
         }
