@@ -1,5 +1,6 @@
 package tp1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Guide1IterativeSolution implements Guide1 {
@@ -144,8 +145,18 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public List<Integer> exercise_6_b_iv(int n) {
-        throw new UnsupportedOperationException("TODO");
-    }
+        List list = new ArrayList();
+            int num = 2;
+            while(n!=1)
+            {
+                while(n%num==0)
+                {
+                   list.add(num);
+                    n /= num;
+                }
+            }
+            return  list;
+        }
 
     @Override
     public int exercise_8(int[] coefs, int n) {

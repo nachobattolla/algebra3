@@ -94,9 +94,19 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public boolean exercise_4(int[] array) {
-
-        throw new UnsupportedOperationException("TODO");
+        return exercise_4Aux(array,0,array.length,false);
     }
+private boolean exercise_4Aux(int[] array,int i, int n,boolean capicúa) {
+    if (i<n/2){
+        if (array[i]== array[n-1]){
+            capicúa=true;
+        }else capicúa=false;
+
+        return exercise_4Aux(array, ++i, --n, capicúa);
+    }
+
+    return capicúa;
+}
 
     @Override
     public boolean exercise_5(int[] array, int n) {
